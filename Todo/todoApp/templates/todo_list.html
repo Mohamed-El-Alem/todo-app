@@ -1,0 +1,88 @@
+
+
+
+
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container">
+    <div class="col-md-12 well">
+        <h3 class="">Todo App</h3>
+        <h6 class="">a simple todo app</h6>
+  
+    </div>
+</div>
+<div class="btn-container btn-header ">
+    <div class="btn-header-left">
+            <a href="{% url 'todo_add' %}" class="button_create"> Create</a>
+            
+            <a href="{% url 'todo_import' %}" class="button_export" > Import</a>
+    </div>
+  
+        <a href="{% url 'todo_export' %}" class="button_import"> Export</a>    
+</div>
+
+<table class="table" id="task-table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Todo</th>
+      <th>Status</th>
+      <th>Created</th>
+      <th>Updated</th>
+      <th>Operation</th>
+    </tr>
+  </thead>
+  <p> 
+<br/>
+
+<table class="table" id="task-table">
+  {% for todo in todo_list %}
+  <tr>
+    <td>{{ todo.user }}</td>
+    <td>{{ todo.text }}</td>
+    {% if todo.is_completed == 'completed' %}
+    <td>
+      <span style="background-color: #6dcf12"> {{ todo.is_completed }}</span>
+    </td>
+    {% else %}
+    <td>
+        <span style="background-color: #8ea782"> {{ todo.is_completed }}</span>
+      </td>
+      {% endif %}
+    <td>{{ todo.created_time }}</td>
+    <td>{{ todo.last_updated }}</td>
+  
+    <td style="width: 150px">
+      <div class="btn-container btn-action">
+
+            {% if todo.is_completed == 'completed' %}
+          <a href="{% url 'todo_uncomplete' todo.id %}" class="btn btn-secondary" style="margin: 5px;"> Uncomplete</a>
+            {% else %}
+          <a href="{% url 'todo_complete' todo.id  %}" class="btn btn-primary" style="margin: 5px;"> complete</a>
+            {% endif %}
+        
+          <a href="{% url 'todo_delete' todo.id %}" class="btn btn-danger" onclick="verify();" style="margin: 5px;" > Delete</a>
+      
+     
+
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<br/><br/>
+{{ todos }}
+
+</div>
+
+<script>
+  function verify(){
+    if (user.id != todo.user.id)
+    alert('you are not allowed')
+
+  }
+</script>
+
+
+
+{% endblock %}

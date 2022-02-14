@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+{% if user.id == todo.user.id %}
+
+<h3>Delete {{todo.text}}</h3>
+
+<div class="form-group">
+  <form method="post">
+    {% csrf_token %}
+    <strong>Are you sure you want to delete!</strong>
+    <button class="btn btn-secondary">Delete</button>
+  </form>
+</div>
+
+{% else %}
+
+<script>
+  function myFunction() { 
+          alert("Hey! go back you are Not allowed!");
+
+  }myFunction()
+  </script>
+{% endif %}
+
+{% endblock %}

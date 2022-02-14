@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <script
+    type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"
+  ></script>
+
+  <body>
+    <div
+      id="myChart"
+      style="width: 100%; max-width: 600px; height: 500px"
+    ></div>
+
+    <script>
+      var comp = "{{completed}}";
+      var uncomp = "{{uncompleted}}";
+
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Todo", "Mhl"],
+          ["completed", comp],
+          ["Not completed", uncomp],
+        ]);
+
+        var options = {
+          title: "Todo statistics",
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("myChart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
+</html>
+
+{% endblock %}

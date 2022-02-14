@@ -1,0 +1,104 @@
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-action {
+  width: 154px;
+  margin: 20px;
+
+}
+
+.btn-header {
+  margin: 20px 0;
+}
+
+.line {
+  text-decoration: none;
+  color: white;
+}
+.button_create{
+
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  box-shadow: 0 9px #4CAF50
+}
+
+.button_import{
+  
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  background-color: white; 
+  color: black; 
+  border: 2px solid #d3c505;
+  border-radius: 5px;
+  box-shadow: 0 9px #d3c505
+
+}
+
+.button_export{
+  
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  background-color: white; 
+  color: black; 
+  border: 2px solid #6866527e;
+  border-radius: 5px;
+  box-shadow: 0 9px #6866527e
+
+}
+
+.line_create{
+  text-decoration: none;
+  color: green;
+
+}
+.line_import{
+  text-decoration: none;
+  color: #d3c505;
+
+}
+.line_export{
+  text-decoration: none;
+  color: green;
+
+}
+
+
+
+
+@media (min-width: 1025px) {
+  .h-custom-2 {
+    height: 100%;
+  }
+}
+
+
+
+
+
